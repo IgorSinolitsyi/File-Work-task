@@ -1,8 +1,8 @@
 package View;
 
-import Controller.ValidateChoice;
+import Utils.ValidateChoice;
 
-public class GetActionNumber {
+public class GetActionNumberView {
     public static int getActionNumber() {
         String actionChoice;
         String CHOOSE_TASK_VIEW = """
@@ -15,7 +15,7 @@ public class GetActionNumber {
                 """;
         System.out.println("\n" + CHOOSE_TASK_VIEW);
         do {
-            actionChoice = GetDataScanner.getDataScanner("Введите номер задания" + "\n");
+            actionChoice = GetDataScannerView.getDataScanner("Введите номер задания" + "\n");
         }
         while (!ValidateChoice.isActionChoice(actionChoice));
         return Integer.parseInt(actionChoice);

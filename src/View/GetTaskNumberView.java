@@ -1,8 +1,8 @@
 package View;
 
-import Controller.ValidateChoice;
+import Utils.ValidateChoice;
 
-public class GetTaskNumber {
+public class GetTaskNumberView {
     public static int getTaskNumber() {
         String taskChoice;
         String CHOOSE_TASK_VIEW = """
@@ -11,7 +11,7 @@ public class GetTaskNumber {
                 2 - использовать java.nio
                 """;
         System.out.println("\n"+CHOOSE_TASK_VIEW);
-        do {taskChoice = GetDataScanner.getDataScanner("Введите номер задания"+"\n");}
+        do {taskChoice = GetDataScannerView.getDataScanner("Введите номер задания"+"\n");}
         while (!ValidateChoice.isTaskChoice(taskChoice));
         return Integer.parseInt(taskChoice);
     }

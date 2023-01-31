@@ -10,7 +10,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 
 public class FileWriteService {
-    public static void CreateFileIO(String fileName) {
+    public static void createFileIO(String fileName) {
         try {
             File file = new File(fileName);
             boolean fl = file.createNewFile();
@@ -22,7 +22,7 @@ public class FileWriteService {
         }
     }
 
-    public static void WriteTextToFileIO(String textToFile, String filename) {
+    public static void writeTextToFileIO(String textToFile, String filename) {
         try (FileOutputStream fileOutputStream = new FileOutputStream(filename)) {
             fileOutputStream.write(textToFile.getBytes());
             System.out.println("Файл записан успешно!");
@@ -32,7 +32,7 @@ public class FileWriteService {
         }
     }
 
-    public static void CreateFileNIO(String fileName) {
+    public static void createFileNIO(String fileName) {
         try {
             Files.createFile(Path.of(fileName));
             System.out.println("Файл создан успешно!");
@@ -43,7 +43,7 @@ public class FileWriteService {
         }
     }
 
-    public static void WriteTextToFileNIO(String textToFile, String filename) {
+    public static void writeTextToFileNIO(String textToFile, String filename) {
         try {
             Files.writeString(Path.of(filename), textToFile);
             System.out.println("Файл записан успешно!");

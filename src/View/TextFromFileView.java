@@ -1,6 +1,6 @@
 package View;
 
-public class ViewTextFromFile {
+public class TextFromFileView {
     public static void textView(String text) {
         System.out.println(text);
     }

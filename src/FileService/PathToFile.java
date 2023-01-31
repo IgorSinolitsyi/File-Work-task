@@ -1,10 +1,17 @@
 package FileService;
 
+import java.io.File;
+
 public class PathToFile {
     private String path;
-
+    private final String projectDirPath;
     public PathToFile(String path) {
-        this.path = path;
+        projectDirPath = new File("").getAbsolutePath();
+        this.path = projectDirPath + path;
+    }
+
+    public String getProjectDirPath() {
+        return projectDirPath;
     }
 
     public String getPath() {
@@ -12,7 +19,7 @@ public class PathToFile {
     }
 
     public void setPath(String path) {
-        this.path = path;
+        this.path = projectDirPath + path;
     }
 
 }
